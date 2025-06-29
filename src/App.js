@@ -347,7 +347,7 @@ Refined prompt:`;
         chatHistory.push({ role: "user", parts: [{ text: prompt }] });
 
         const payload = { contents: chatHistory };
-        const apiKey = ""; // If you want to use models other than gemini-2.0-flash, provide an API key here. Otherwise, leave this as-is.
+        const apiKey = process.env.REACT_APP_GEMINI_API_KEY || ""; // If you want to use models other than gemini-2.0-flash, provide an API key here. Otherwise, leave this as-is.
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
         try {
